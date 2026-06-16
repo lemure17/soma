@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="lanpage.css">
     <script defer src="app.js"></script>
     <title>Soma</title>
+    <link rel="preload" as="image" href="assets/hero.webp">
 </head>
 <body>
-<div class="wrap"> <!--classe wrap para configurar o layout geral, aplicando regras de display e afins-->
+<div class="wrap"> 
 
     <nav>
-        <div class="navbar"> <!--classe navbar para configurar o layout da barra de navegação, aplicando links para as sessões do site e -->
+        <div class="navbar">
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#nossa-historia">Nossa História</a></li>
@@ -29,7 +30,7 @@
     <div class="hero" id="inicio">
   <div class="hero-content">  
     
-    <img class="hero-logo" src="assets/logotipo/logo13.png" alt="Soma">
+    <img class="hero-logo" src="assets/logotipo/logo13.png" fetchpriority="high" alt="Soma">
 
     <div class="hero-text">
       <p class="tagline">+ see the unbuilt _.</p>
@@ -41,17 +42,17 @@
 
    <div class="history" id="nossa-historia">
 
-  <!-- coluna esquerda: grid de fotos -->
+  
   <div class="history-grade">
-    <div class="img" style="background-image: url('assets/grid/Imagem1.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem2.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem3.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem4.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem5.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem9.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem6.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem7.png')"></div>
-    <div class="img" style="background-image: url('assets/grid/Imagem8.png')"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem1.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem2.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem3.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem4.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem5.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem9.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem6.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem7.png')" loading="lazy"></div>
+    <div class="img" style="background-image: url('assets/grid/Imagem8.png')" loading="lazy"></div>
   </div>
 
   
@@ -140,7 +141,7 @@
 
   <div class="info">
 
-    <!-- logo acima dos contatos -->
+    
     <img class="contact-logo" src="assets/logotipo/logo9.png" alt="Soma">
 
     <div class="contact-item">
@@ -160,10 +161,10 @@
 
   </div>
 
-  <!-- linha divisória -->
+  
   <div class="contact-divider"></div>
 
-  <!-- foto circular -->
+  
   <div class="contact-photo-wrapper">
     <img class="contact-photo" src="assets/profile-pic/profile.png" alt="Gabs">
   </div>
