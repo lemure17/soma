@@ -508,10 +508,7 @@ footer a {
     align-items: stretch;
   }
 
-  /* Reordena os filhos do nav em coluna:
-     .logo vem do HTML depois de .navbar, mas no mobile
-     queremos ela em cima. Order funciona como posição na fila — 
-     menor número = aparece primeiro. */
+  
   .logo {
     order: 1;
     display: flex;
@@ -539,42 +536,44 @@ footer a {
     padding-bottom: 8px;
   }
 
-  /* Quando o JS adiciona .menu-aberto no <nav>, os links aparecem */
+  
   nav.menu-aberto .navbar ul {
     display: flex;
   }
 
-  /* ── HERO ── */
+  
 
   .hero-content {
     padding-left: 24px;
     gap: 16px;
   }
 
-  /* ── HISTORY ──
-     Problema que estava no seu código:
-     - height: 100dvh não foi sobrescrito → conteúdo empilhado transbordava
-     - grid-template-rows: auto em divs vazios → colapsavam a 0px de altura
-       (divs com background-image não têm altura intrínseca)
-  */
+  
 
   .history {
     flex-direction: column;
-    height: auto; /* ← deixa o conteúdo determinar a altura */
+    height: auto; 
   }
 
-  .history-grade {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: unset; /* remove as linhas fixas do desktop */
-    gap: 2px;
-    }
+.history-grade {
+  flex: none;
+  height: auto;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: unset;
+  gap: 2px;
+}
 
-  /* aspect-ratio garante altura proporcional mesmo sem conteúdo interno */
+
+.history-grade .img:nth-child(n+7) {
+  display: none;
+}
+  
   .history-grade .img {
     aspect-ratio: 1 / 1;
   }
 
-  /* Remove o span especial que só faz sentido no grid de 3 colunas */
+  
   .history-grade .img:nth-child(1),
   .history-grade .img:nth-child(6) {
     grid-column: auto;
@@ -584,40 +583,33 @@ footer a {
   .history-content {
     padding: 48px 24px;
     text-align: center;
-    margin-top: 0; /* remove margem que empurrava o conteúdo pra baixo */
-    margin-bottom: 32px; /* adiciona margem abaixo para separar do próximo bloco */
+    margin-top: 0; 
+    margin-bottom: 32px; 
   }
 
-  /* ── US ──
-     Estava completamente ausente das suas media queries.
-     Os dois filhos flex (.us-content e .us-hero) ficavam
-     espremidos lado a lado em telas pequenas.
-  */
+  
 
   .us {
     flex-direction: column;
     height: auto;
-    min-height: 100dvh;
+    padding-block: 48px;
   }
 
   .us-content {
     padding: 48px 24px 32px;
   }
 
-  /* .us-hero é um div vazio com background-image — sem min-height, colapsa */
+  
   .us-hero {
     width: 100%;
-    min-height: 300px;
+    min-height: auto;
+    padding-block: 48px;
     margin: 0;
     align-self: auto;
     border-radius: 0;
   }
 
-  /* ── PRODUCT ──
-     4 colunas em tablet fica apertado demais.
-     Vai para 2 colunas aqui, e 1 coluna no breakpoint 480px abaixo.
-  */
-
+ 
   .product {
     height: auto;
     min-height: 100dvh;
@@ -627,11 +619,6 @@ footer a {
   .product-cards {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  /* ── CONTACT ──
-     .contact-photo tinha 440px fixos — em telas de 480px
-     quase não cabia. Reduzido aqui.
-  */
 
   .contact {
     flex-direction: column;
