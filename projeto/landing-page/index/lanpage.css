@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --verde-soma:  #68663C;
+  --contraste:   #202020;
+  --peaceful:    #D4CABF;
+  --cool-green:  #ABA97D;
+  --bg:          #F7F5F2;
+  --cinzei:      #B8B6B5;
+
+  --font-titulo: 'Space Grotesk', sans-serif;
+  --font-corpo:  'DM Sans', sans-serif;
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-corpo);
+  background-color: var(--bg);
+  color: var(--contraste);
+  overflow-x: hidden; 
+}
+
+.wrap {
+  width: 100%;
+}
+
+
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(247, 245, 242, 0.92); 
+  backdrop-filter: blur(6px); 
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 18px 48px; 
+}
+
+.navbar ul {
+  display: flex;
+  gap: 40px; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li a{
+  font-family: var(--font-corpo);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em; 
+  text-decoration: none;
+  color: var(--contraste);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 0.3s ease; 
+  padding-block: 10px;
+  
+}
+
+.navbar ul li a:hover {
+  color: var(--verde-soma);
+}
+
+.logo button{
+  background: none;
+  border: none;
+  margin-right: 3vw;
+}
+
+.nav-logo {
+  width: 100%;
+  max-width: 48px;
+  height: auto;
+  margin: 5%;
+  z-index: 101;
+  border-radius: 100%;
+}
+
+
+.hero {
+  height: 100dvh;
+  width: 100%;
+  
+  background: 
+    linear-gradient(rgba(104, 102, 60, 0.65), rgba(104, 102, 60, 0.65)),
+    url('../../assets/hero.png') center / cover no-repeat;
+
+  display: flex;
+  align-items: center; 
+  max-width: 100vw;
+}
+
+.hero-content {
+  /*aumentar o tamanho do texto , conteúdo e logo para ocupar mais espaço do hero*/
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 72px;
+}
+
+.hero-content .hero-logo {
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-text .tagline {
+  font-family: var(--font-corpo);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--bg); 
+}
+
+.hero-text .tagline-pt {
+  font-family: var(--font-corpo);
+  font-size: 1.0rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--cool-green); 
+}
+
+.history {
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - 80px);
+
+  background-image: url('../../assets/history.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.history-grade {
+  flex: 1.4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+  gap: 3px;
+  overflow: hidden; 
+}
+
+.history-grade .img {
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+  overflow: hidden;
+}
+
+.history-grade .img:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / span 2; 
+}
+
+
+.history-grade .img:nth-child(6) {
+  grid-column: 3;
+  grid-row: 2 / span 2; 
+}
+
+.history-grade .img:hover {
+  transform: scale(1.04);
+}
+
+.history-content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.history-logo-bg {
+  position: absolute;
+  width: 130%;
+  left: -15%;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.history-stats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.stat-number {
+  font-family: var(--font-titulo);
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--verde-soma);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-corpo);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--contraste);
+  text-transform: uppercase;
+}
+
+.us {
+  height: 100dvh;
+  width: 100%;
+  background-color: #ABA97D; 
+  display: flex;
+  align-items: center;
+}
+
+
+.us-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 72px; 
+}
+
+.us-label {
+  font-family: var(--font-corpo);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg);
+}
+
+.us-title {
+  font-family: var(--font-titulo);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--contraste);
+  text-transform: uppercase;
+}
+
+.us-text {
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7; 
+  color: var(--contraste);
+  max-width: 420px; 
+}
+
+.us-hero {
+  flex: 1;
+  align-self: stretch;
+  background-image: url('../../assets/us/fachada-final.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.us-hero img {
+  width: 130%;         
+  opacity: 0.15;       
+  pointer-events: none;
+}
+
+
+/* ============================================
+   PRODUCT — Slide 5
+   Fundo verde soma, 4 cards em linha.
+============================================ */
+
+.product {
+  height: 100dvh;
+  width: 100%;
+  background-color: var(--verde-soma);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 72px;
+}
+
+.product-title {
+  font-family: var(--font-titulo);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bg);
+  opacity: 0.7;
+  align-self: flex-start; /* alinha à esquerda como nos outros títulos */
+}
+
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.section {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+
+  /* foto de fundo — cada card terá a sua */
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.section:hover {
+  transform: translateY(-6px); /* sobe levemente no hover */
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  inset: 0; /* shorthand para top/right/bottom/left: 0 */
+  background: linear-gradient(
+    to top,
+    rgba(32, 32, 32, 0.85) 0%,    /* escuro embaixo onde fica o texto */
+    rgba(32, 32, 32, 0.1) 100%    /* quase transparente em cima */
+  );
+  z-index: 1;
+}
+
+.section-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.section-header {
+  font-family: var(--font-titulo);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--bg);
+  text-transform: uppercase;
+}
+
+.section-desc {
+  font-family: var(--font-corpo);
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--peaceful);
+  letter-spacing: 0.04em;
+}
+
+/* ============================================
+   CONTACT
+   Fundo verde musgo acinzentado.
+   Duas colunas: contatos esquerda, foto direita.
+============================================ */
+
+.contact {
+  height: 100dvh;
+  width: 100%;
+  background-color: hsl(58, 10%, 38%);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* centraliza o conjunto todo */
+  gap: 60px; /* substitui o margin da divisória */
+  padding: 0 72px; /* espaço nas bordas, igual ao padding-left do .info */
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  /* sem padding-left — o padding agora está no .contact pai */
+}
+
+.contact-logo {
+  height: 32px;
+  max-width: 200px;
+  width: auto;
+  margin-left: 5%;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.contact-item {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-item h5 {
+  font-family: var(--font-corpo);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bg);
+  opacity: 0.6; 
+}
+
+.contact-item p,
+.contact-item a {
+  font-family: var(--font-titulo);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--bg);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact-item a:hover {
+  opacity: 0.7;
+}
+
+
+.contact-divider {
+  width: 1px;
+  height: 40%;
+  background-color: var(--bg);
+  opacity: 0.3;
+  flex-shrink: 0;
+  align-self: center;
+  /* sem margin — o gap do pai já cuida do espaço */
+}
+
+.contact-photo-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-photo {
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  object-fit: cover; 
+  object-position: center top; 
+}
+
+footer{
+  background-color: var(--bg);
+  color: var(--contraste);
+  margin: 10px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer a {
+  text-decoration: none;
+  color: #68663C;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   Breakpoints: 750px → tablet/mobile
+                480px → mobile pequeno
+============================================ */
+
+@media (max-width: 750px) {
+
+  /* ── NAV ── */
+
+  nav {
+    flex-direction: column; /* empilha logo + links em vez de lado a lado */
+    align-items: stretch;
+  }
+
+  /* Reordena os filhos do nav em coluna:
+     .logo vem do HTML depois de .navbar, mas no mobile
+     queremos ela em cima. Order funciona como posição na fila — 
+     menor número = aparece primeiro. */
+  .logo {
+    order: 1;
+    display: flex;
+    justify-content: center; /* centraliza a logo */
+    padding: 8px 0;
+  }
+
+  .logo button {
+    margin-right: 0;
+    cursor: pointer;
+  }
+
+  .navbar {
+    order: 2; /* links ficam abaixo da logo */
+    padding: 0 24px 16px;
+    justify-content: center;
+  }
+
+  /* Escondido por padrão no mobile */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 8px;
+  }
+
+  /* Quando o JS adiciona .menu-aberto no <nav>, os links aparecem */
+  nav.menu-aberto .navbar ul {
+    display: flex;
+  }
+
+  /* ── HERO ── */
+
+  .hero-content {
+    padding-left: 24px;
+    gap: 16px;
+  }
+
+  /* ── HISTORY ──
+     Problema que estava no seu código:
+     - height: 100dvh não foi sobrescrito → conteúdo empilhado transbordava
+     - grid-template-rows: auto em divs vazios → colapsavam a 0px de altura
+       (divs com background-image não têm altura intrínseca)
+  */
+
+  .history {
+    flex-direction: column;
+    height: auto; /* ← deixa o conteúdo determinar a altura */
+  }
+
+  .history-grade {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset; /* remove as linhas fixas do desktop */
+    gap: 2px;
+    }
+
+  /* aspect-ratio garante altura proporcional mesmo sem conteúdo interno */
+  .history-grade .img {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Remove o span especial que só faz sentido no grid de 3 colunas */
+  .history-grade .img:nth-child(1),
+  .history-grade .img:nth-child(6) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .history-content {
+    padding: 48px 24px;
+    text-align: center;
+    margin-top: 0; /* remove margem que empurrava o conteúdo pra baixo */
+    margin-bottom: 32px; /* adiciona margem abaixo para separar do próximo bloco */
+  }
+
+  /* ── US ──
+     Estava completamente ausente das suas media queries.
+     Os dois filhos flex (.us-content e .us-hero) ficavam
+     espremidos lado a lado em telas pequenas.
+  */
+
+  .us {
+    flex-direction: column;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .us-content {
+    padding: 48px 24px 32px;
+  }
+
+  /* .us-hero é um div vazio com background-image — sem min-height, colapsa */
+  .us-hero {
+    width: 100%;
+    min-height: 300px;
+    margin: 0;
+    align-self: auto;
+    border-radius: 0;
+  }
+
+  /* ── PRODUCT ──
+     4 colunas em tablet fica apertado demais.
+     Vai para 2 colunas aqui, e 1 coluna no breakpoint 480px abaixo.
+  */
+
+  .product {
+    height: auto;
+    min-height: 100dvh;
+    padding: 72px 24px 48px;
+  }
+
+  .product-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ── CONTACT ──
+     .contact-photo tinha 440px fixos — em telas de 480px
+     quase não cabia. Reduzido aqui.
+  */
+
+  .contact {
+    flex-direction: column;
+    height: auto;
+    min-height: 100dvh;
+    padding: 72px 32px 48px;
+    gap: 40px;
+  }
+
+  .contact-divider {
+    width: 60%;
+    height: 1px;
+  }
+
+  .contact-photo {
+    width: 280px;
+    height: 280px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .product-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+}
