@@ -104,7 +104,7 @@ nav {
   
   background: 
     linear-gradient(rgba(104, 102, 60, 0.65), rgba(104, 102, 60, 0.65)),
-    url('../../assets/hero.png') center / cover no-repeat;
+    url('assets/hero.png') center / cover no-repeat;
 
   display: flex;
   align-items: center; 
@@ -151,7 +151,7 @@ nav {
   width: 100%;
   height: calc(100dvh - 80px);
 
-  background-image: url('../../assets/history.png');
+  background-image: url('assets/history.png');
   background-size: cover;
   background-position: center;
 
@@ -282,7 +282,7 @@ nav {
 .us-hero {
   flex: 1;
   align-self: stretch;
-  background-image: url('../../assets/us/fachada-final.jpg');
+  background-image: url('assets/us/fachada-final.jpg');
   background-size: cover;
   background-position: center;
 }
