@@ -1,0 +1,15 @@
+footer{
+  background-color: var(--bg);
+  color: var(--contraste);
+  margin: 10px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer a {
+  text-decoration: none;
+  color: #68663C;
+}
